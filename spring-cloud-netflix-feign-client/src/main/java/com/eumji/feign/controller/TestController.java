@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
  * DATE: 2017/5/1
  * TIME: 9:16
  */
-@RestController
+
 public class TestController {
 
     @Autowired
     private TestClient testClient;
 
-    @RequestMapping("/")
+    @RequestMapping("/test")
     public String getInfo(){
         return testClient.getValue("hello world");
     }

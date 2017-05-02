@@ -34,7 +34,7 @@ public class DefaultController {
                 .target(FeignClientService.class,"http://eureka-client");
     }
 
-    @RequestMapping(name = "/",method = RequestMethod.GET)
+    @RequestMapping(name = "/default",method = RequestMethod.GET)
     public String  getInfo(){
         return feignClientService.getValue("hello world!");
     }

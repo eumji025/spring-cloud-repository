@@ -1,5 +1,6 @@
 package com.eumji.feign.service;
 
+import com.eumji.feign.conf.TestConfiguration;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * DATE: 2017/5/1
  * TIME: 9:09
  */
-@FeignClient("eureka-client")
+@FeignClient(name = "eureka-client")
 public interface TestClient {
     @RequestMapping(method = RequestMethod.GET, value = "/")
     String getValue(String info);
