@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.eumji.hystrix</groupId>
-	<artifactId>spring-cloud-netflix-hystrix</artifactId>
+	<artifactId>spring-cloud-netflix-hystrix-fallback</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>spring-cloud-netflix-hystrix</name>
-	<description>Demo project for Spring cloud hystrix client</description>
+	<description>Demo project for Spring cloud hystrix fallback client</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
