@@ -5,31 +5,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * FILE: com.eumji.zuul.controller.ProxyController.java
+ * FILE: com.eumji.zuul.controller.ZuulController.java
  * MOTTO:  不积跬步无以至千里,不积小流无以至千里
  * AUTHOR: EumJi
  * DATE: 2017/5/7
- * TIME: 11:29
+ * TIME: 11:23
  */
 @RestController
-public class ProxyController {
+public class ZuulController {
 
-    @RequestMapping("/proxy/add")
+    @RequestMapping("/users/add")
     public String addUser(){
         return "add user success";
     }
 
-    @RequestMapping("/proxy/update")
+    @RequestMapping("/users/update")
     public String updateUser(){
         return "update user success";
     }
 
-    @RequestMapping("/proxy/get/{id}")
+    @RequestMapping("/users/get/{id}")
     public String getUser(@PathVariable String id){
         return "search user by id success, id is "+id;
     }
 
-    @RequestMapping("/proxy/delete/{id}")
+    @RequestMapping("/users/delete/{id}")
     public String addUser(@PathVariable String id){
         return "delete user by id success,id is "+id;
     }
