@@ -27,8 +27,11 @@ netflix下的负载均衡组件
 ### spring-cloud-netflix-ribbon
 netflix下的负载均衡组件
 
-### spring-cloud-netflix-hystrix
+### spring-cloud-netflix-hystrix-fallback
 使用hystrix的fallback功能
 和ribbon的例子差不多,通过@HystrixCommand注解指定当服务不可达的时候,相应一个默认值.
+
+###  spring-cloud-netflix-hystrix-dashboard
+断路由仪表盘的例子
 
 详细讲解请参见 http://www.eumji025.com
