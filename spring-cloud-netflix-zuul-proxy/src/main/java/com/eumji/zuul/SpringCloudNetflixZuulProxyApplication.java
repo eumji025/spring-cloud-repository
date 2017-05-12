@@ -8,8 +8,6 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
-@EnableDiscoveryClient
-@EnableCircuitBreaker
 @EnableZuulProxy
 public class SpringCloudNetflixZuulProxyApplication {
 
