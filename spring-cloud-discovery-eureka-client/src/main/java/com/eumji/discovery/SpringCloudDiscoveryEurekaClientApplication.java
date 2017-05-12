@@ -22,24 +22,6 @@ public class SpringCloudDiscoveryEurekaClientApplication {
 		return "hello world,this is eureka client1";
 	}
 
-	/**
-	 * zuul proxy first demo
-	 * @return
-	 */
-	@RequestMapping("/proxy/add")
-	public String addUser(){
-		return "add user success,  this proxy by zuul";
-	}
-
-	/**
-	 * zuul proxy first demo2
-	 * @return
-	 */
-	@RequestMapping("/add")
-	public String addUser2(){
-		return "add user success,  this proxy by zuul";
-	}
-
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(SpringCloudDiscoveryEurekaClientApplication.class).web(true).run(args);
 	}
