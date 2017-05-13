@@ -31,7 +31,14 @@ netflix下的负载均衡组件
 使用hystrix的fallback功能
 和ribbon的例子差不多,通过@HystrixCommand注解指定当服务不可达的时候,相应一个默认值.
 
-###  spring-cloud-netflix-hystrix-dashboard
+### spring-cloud-netflix-hystrix-dashboard
 断路由仪表盘的例子
+
+### spring-cloud-netflix-hystrix-zuul-proxy
+使用zuul作为代理服务器,对请求的url进行转发
+本节使用最简单的转发,直接转发到某个url地址
+
+### spring-cloud-netflix-hystrix-zuul-proxy2
+使用feign进行动态的路由,需要配置serviceId,也就是feign客户端的名称
 
 详细讲解请参见 http://www.eumji025.com
