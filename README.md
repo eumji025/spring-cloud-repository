@@ -41,4 +41,7 @@ netflix下的负载均衡组件
 ### spring-cloud-netflix-hystrix-zuul-proxy2
 使用feign进行动态的路由,需要配置serviceId,也就是feign客户端的名称
 
+### 说明
+后面按照官方文档将要学习spring cloud stream相关的内容,在这之前要先学习一下RabbitMQ相关的知识,
+近期时间比较紧张,因为现在个人返校,可能更多的会去看一下理论性的东西.cloud这部分的进度会稍慢一些
 详细讲解请参见 http://www.eumji025.com
