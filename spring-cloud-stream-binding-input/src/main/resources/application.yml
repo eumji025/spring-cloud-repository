@@ -1,0 +1,10 @@
+spring:
+  rabbitmq:
+    username: eumji
+    password: eumji025
+
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: transformed
