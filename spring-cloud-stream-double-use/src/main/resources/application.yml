@@ -1,0 +1,9 @@
+fixedDelay: 1000
+spring:
+  rabbitmq:
+    username: eumji
+    password: eumji025
+    host: localhost
+    port: 5672
+server:
+  port: 8082
