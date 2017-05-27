@@ -1,10 +1,10 @@
-spring:
-  rabbitmq:
-    username: eumji
-    password: eumji025
 
+server:
+  port: 8080
+spring:
   cloud:
     stream:
       bindings:
         input:
-          destination: transformed
+          destination: source-channel
+          # destination: sink-channel
