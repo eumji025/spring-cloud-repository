@@ -5,7 +5,7 @@ spring:
     stream:
       bindings:
         output:
-          destination: xformed
+          destination: source-channel
         input:
-          destination: testtock
+          destination: sink-channel
 
