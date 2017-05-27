@@ -1,8 +1,7 @@
 package com.eumji.stream.service;
 
-import com.eumji.stream.util.TimeSourceOptions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.integration.annotation.InboundChannelAdapter;
@@ -14,15 +13,14 @@ import java.util.Date;
  * Created by eumji on 17-5-25.
  */
 @EnableBinding(Source.class)
-@EnableConfigurationProperties(TimeSourceOptions.class)
 public class TimeSource {
-
-    @Autowired
-    private TimeSourceOptions timeSourceOptions;
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @InboundChannelAdapter(value = Source.OUTPUT)
     public String timerMessageSource() {
-        return new SimpleDateFormat(this.timeSourceOptions.getFormat()).format(new Date());
+        String format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        logger.info("publish message :"+format);
+        return format;
     }
 
 }
