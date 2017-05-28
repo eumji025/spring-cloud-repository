@@ -1,6 +1,6 @@
 package com.eumji.stream;
 
-import com.eumji.stream.config.sink.SinkApplication;
+import com.eumji.stream.config.sink.SinkApplicationDemo;
 import com.eumji.stream.config.source.SourceApplication;
 import com.eumji.stream.config.transform.ProcessApplicaiton;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +13,6 @@ public class SpringCloudStreamDoubleUseApplication {
 		new AggregateApplicationBuilder(SpringCloudStreamDoubleUseApplication.class, args)
 				.from(SourceApplication.class).args("--fixedDelay=5000")
 				.via(ProcessApplicaiton.class)
-				.to(SinkApplication.class).args("--debug=true").run();
+				.to(SinkApplicationDemo.class).args("--debug=true").run();
 	}
 }
