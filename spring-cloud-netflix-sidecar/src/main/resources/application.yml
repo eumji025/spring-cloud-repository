@@ -1,0 +1,8 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: sidecar
+sidecar:
+  health-uri: http://localhost:8087/health.json
+  port: 8087
