@@ -1,3 +1,7 @@
+
+## 说明
+本分支主要是针对edgware版本的新功能进行添加和测试
+
 # 文档记录
 记录spring cloud学习中自己所做的demo
 
@@ -37,6 +41,41 @@ netflix下的负载均衡组件
 ### spring-cloud-netflix-hystrix-zuul-proxy
 使用zuul作为代理服务器,对请求的url进行转发
 本节使用最简单的转发,直接转发到某个url地址
+
+
+添加zuul的新功能 使用 $zuulURL/routes
+可查看当前被zuul的路由规则
+```bash
+{
+    "/users/**": "http://localhost:8080/proxy/",
+    "/eureka-client/**": "eureka-client"
+}
+```
+/routes?format=details 可以查看更为细致的路由规则(GET请求方式)
+```bash
+{
+    "/users/**": {
+        "id": "users",
+        "fullPath": "/users/**",
+        "location": "http://localhost:8080/proxy/",
+        "path": "/**",
+        "prefix": "/users",
+        "retryable": false,
+        "customSensitiveHeaders": false,
+        "prefixStripped": true
+    },
+    "/eureka-client/**": {
+        "id": "eureka-client",
+        "fullPath": "/eureka-client/**",
+        "location": "eureka-client",
+        "path": "/**",
+        "prefix": "/eureka-client",
+        "retryable": false,
+        "customSensitiveHeaders": false,
+        "prefixStripped": true
+    }
+}
+```
 
 ### spring-cloud-netflix-hystrix-zuul-proxy2
 使用feign进行动态的路由,需要配置serviceId,也就是feign客户端的名称
