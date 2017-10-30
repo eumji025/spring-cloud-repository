@@ -1,6 +1,5 @@
 server:
   port: 8081
-fixedDelay: 5000
 spring:
   cloud:
     stream:
@@ -8,4 +7,7 @@ spring:
         output:
           destination: sink-channel
           contentType: text/plain
+  integration:
+    poller:
+      fixed-delay: 1000
 

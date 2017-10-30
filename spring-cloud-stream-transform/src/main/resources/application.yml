@@ -8,4 +8,11 @@ spring:
           destination: source-channel
         input:
           destination: sink-channel
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name:
+
+
 

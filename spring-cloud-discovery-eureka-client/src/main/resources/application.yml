@@ -7,7 +7,6 @@
 #      user: osufhalskjrtl
 #            password: lviuhlszvaorhvlo5847
 #            configPath: /config
-
 eureka:
   client:
     serviceUrl:
@@ -21,4 +20,5 @@ server:
 spring:
   application:
     name: eureka-client
+
 
