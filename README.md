@@ -75,10 +75,111 @@ netflix下的负载均衡组件
         "prefixStripped": true
     }
 }
+
 ```
 
 ### spring-cloud-netflix-hystrix-zuul-proxy2
 使用feign进行动态的路由,需要配置serviceId,也就是feign客户端的名称
+
+
+### spring-cloud-netflix-sidecar
+
+本项目主要是用来展示通过sidecar来展示所有的eureka注册实例信息
+访问接口 http://localhost:8086/hosts/{serviceId}
+
+@EnableSidecar。这个注解包括@EnableCircuitBreaker，@EnableDiscoveryClient，和@EnableZuulProxy。
+
+```bash
+[
+    {
+        "host": "192.168.184.1",
+        "port": 8081,
+        "metadata": {},
+        "secure": false,
+        "uri": "http://192.168.184.1:8081",
+        "serviceId": "EUREKA-CLIENT",
+        "instanceInfo": {
+            "instanceId": "192.168.184.1:eureka-client:8081",
+            "app": "EUREKA-CLIENT",
+            "appGroupName": null,
+            "ipAddr": "192.168.184.1",
+            "sid": "na",
+            "homePageUrl": "http://192.168.184.1:8081/",
+            "statusPageUrl": "http://192.168.184.1:8081${management.context-path}/info",
+            "healthCheckUrl": "http://192.168.184.1:8081${management.context-path}/health",
+            "secureHealthCheckUrl": null,
+            "vipAddress": "eureka-client",
+            "secureVipAddress": "eureka-client",
+            "countryId": 1,
+            "dataCenterInfo": {
+                "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                "name": "MyOwn"
+            },
+            "hostName": "192.168.184.1",
+            "status": "UP",
+            "leaseInfo": {
+                "renewalIntervalInSecs": 30,
+                "durationInSecs": 90,
+                "registrationTimestamp": 1509342206388,
+                "lastRenewalTimestamp": 1509351908996,
+                "evictionTimestamp": 0,
+                "serviceUpTimestamp": 1509342206388
+            },
+            "isCoordinatingDiscoveryServer": false,
+            "metadata": {},
+            "lastUpdatedTimestamp": 1509342206388,
+            "lastDirtyTimestamp": 1509342206279,
+            "actionType": "ADDED",
+            "asgName": null,
+            "overriddenStatus": "UNKNOWN"
+        }
+    },
+    {
+        "host": "192.168.184.1",
+        "port": 8080,
+        "metadata": {},
+        "secure": false,
+        "uri": "http://192.168.184.1:8080",
+        "serviceId": "EUREKA-CLIENT",
+        "instanceInfo": {
+            "instanceId": "192.168.184.1:eureka-client:8080",
+            "app": "EUREKA-CLIENT",
+            "appGroupName": null,
+            "ipAddr": "192.168.184.1",
+            "sid": "na",
+            "homePageUrl": "http://192.168.184.1:8080/",
+            "statusPageUrl": "http://192.168.184.1:8080${management.context-path}/info",
+            "healthCheckUrl": "http://192.168.184.1:8080${management.context-path}/health",
+            "secureHealthCheckUrl": null,
+            "vipAddress": "eureka-client",
+            "secureVipAddress": "eureka-client",
+            "countryId": 1,
+            "dataCenterInfo": {
+                "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                "name": "MyOwn"
+            },
+            "hostName": "192.168.184.1",
+            "status": "UP",
+            "leaseInfo": {
+                "renewalIntervalInSecs": 30,
+                "durationInSecs": 90,
+                "registrationTimestamp": 1509342251066,
+                "lastRenewalTimestamp": 1509351893601,
+                "evictionTimestamp": 0,
+                "serviceUpTimestamp": 1509342251066
+            },
+            "isCoordinatingDiscoveryServer": false,
+            "metadata": {},
+            "lastUpdatedTimestamp": 1509342251066,
+            "lastDirtyTimestamp": 1509342251019,
+            "actionType": "ADDED",
+            "asgName": null,
+            "overriddenStatus": "UNKNOWN"
+        }
+    }
+]
+```
+
 
 ### 说明
 后面按照官方文档将要学习spring cloud stream相关的内容,在这之前要先学习一下RabbitMQ相关的知识,
