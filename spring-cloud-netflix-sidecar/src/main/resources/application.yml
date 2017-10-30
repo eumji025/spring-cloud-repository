@@ -6,4 +6,4 @@ spring:
 sidecar:
   #Ö¸Ïòeureka serverµÄhealth
   health-uri: http://localhost:8761/health.json
-  port: 8087
+  port: 8761
