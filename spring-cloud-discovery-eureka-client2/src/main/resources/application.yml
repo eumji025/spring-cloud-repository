@@ -3,15 +3,14 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-  instance:
-    statusPageUrlPath: ${management.context-path}/info
-    healthCheckUrlPath: ${management.context-path}/health
+
 server:
   port: 8081
-  address: localhost
 spring:
   application:
     name: eureka-client
+
+
 endpoints:
   shutdown:
     enabled: true
