@@ -98,9 +98,9 @@ response:
 }
 
 ```
-
-### spring-cloud-netflix-hystrix-zuul-proxy2
-使用feign进行动态的路由,需要配置serviceId,也就是feign客户端的名称
+## spring-cloud-zuul-fallback-client
+当zuul路由的服务出现下线不可访问等情况
+使用fallback可以做降级处理
 
 
 ### spring-cloud-netflix-sidecar
