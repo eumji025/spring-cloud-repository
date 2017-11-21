@@ -41,6 +41,27 @@ netflix下的负载均衡组件
 ### spring-cloud-netflix-hystrix-zuul-proxy
 使用zuul作为代理服务器,对请求的url进行转发
 本节使用最简单的转发,直接转发到某个url地址
+不需要eureka server
+
+## spring-cloud-netflix-hystrix-zuul-proxy2
+
+使用eureka的方式进行路由
+stripPrefix: false  不去掉前缀
+
+测试:
+
+```bash
+请求url(#stripPrefix: false):
+localhost:8085/users/map/value
+response:
+{key1=value1, key2=value2}   by eureka client without users
+
+请求url:
+localhost:8085/users/map/value
+response:
+{key1=value1, key2=value2}   by eureka client
+
+```
 
 
 添加zuul的新功能 使用 $zuulURL/routes
