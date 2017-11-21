@@ -16,6 +16,8 @@
 
 package com.eumji.discovery;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +39,18 @@ public class ProxyController {
     public String addUser(){
         return "add user success,  this proxy by zuul";
     }
+
+    /**
+     * zuul将user转发成proxy
+     * @param id
+     * @return
+     */
+    @GetMapping("/proxy/get/{id}")
+    public String getUser(@PathVariable String id){
+        return "proxy by zuul ,search user by id success, id is "+id;
+    }
+
+
 
     /**
      * zuul proxy by serviceId

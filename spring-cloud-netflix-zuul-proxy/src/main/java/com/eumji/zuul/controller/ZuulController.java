@@ -17,6 +17,7 @@
 package com.eumji.zuul.controller;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,7 +43,7 @@ public class ZuulController {
         return "update user success";
     }
 
-    @RequestMapping("/users/get/{id}")
+    @GetMapping("/users/get/{id}")
     public String getUser(@PathVariable String id){
         return "search user by id success, id is "+id;
     }

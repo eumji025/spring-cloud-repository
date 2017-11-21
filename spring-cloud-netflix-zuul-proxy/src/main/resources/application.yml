@@ -3,7 +3,7 @@ zuul:
   routes:
     users:
       path: /users/**
-      url: http://localhost:8080/proxy/
+      url: /proxy/
 
 ribbon:
   eureka:
