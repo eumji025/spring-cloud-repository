@@ -85,4 +85,31 @@ public class ProxyController {
         System.out.println("add custom user success,  this proxy by zuul customer");
         return "add custom user success,  this proxy by zuul customer";
     }
+
+
+
+
+
+    /*========================2017年11月21日19:39:39===============================*/
+
+    /**
+     * 使用eureka 注册发现的功能测试
+     * @param request
+     * @return
+     */
+    @PostMapping("/users/map/value")
+    public String setUser22(@RequestBody Map<String,String> request){
+        return request.toString()+"   by eureka client";
+    }
+    /*=================================注释stripPrefix: false 进入下面的方法=============================================*/
+
+    /**
+     * 使用eureka 注册发现的功能测试
+     * @param request
+     * @return
+     */
+    @PostMapping("/map/value")
+    public String setUser2(@RequestBody Map<String,String> request){
+        return request.toString()+"   by eureka client without users";
+    }
 }

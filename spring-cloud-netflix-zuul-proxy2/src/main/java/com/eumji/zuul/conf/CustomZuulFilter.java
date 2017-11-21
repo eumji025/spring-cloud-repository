@@ -76,7 +76,7 @@ public class CustomZuulFilter extends ZuulFilter {
         logger.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
         String token = request.getParameter("token");
         logger.info("token:"+token);
-        if (!token.equals("success_token")){
+        if (token == null || !token.equals("success_token")){
             //认证失败
             logger.error("token验证失败");
             HttpServletResponse response = ctx.getResponse();
