@@ -1,17 +1,19 @@
 #发现客户端实现都支持某种元数据映射（例如对于我们拥有的Eureka eureka.instance.metadataMap）。
 #可能需要在其服务注册元数据中配置Config Server的一些其他属性，以便客户端可以正确连接。
 #如果使用HTTP Basic安全配置服务器，则可以将凭据配置为“用户名”和“密码”。并且如果配置服务器具有上下文路径，您可以设置“configPath”。
+zuul:
+  routes:
+    customers:
+      path: /customers/**
+      serviceId: customers
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+     defaultZone: http://localhost:8761/eureka/
 
-  instance:
-    statusPageUrlPath: ${management.context-path}/info
-    healthCheckUrlPath: ${management.context-path}/health
 server:
-  port: 8081
+  port: 8086
 spring:
   application:
-    name: customers
+    name: zuul-fallback
 
