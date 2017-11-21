@@ -16,10 +16,9 @@
 
 package com.eumji.discovery;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * FILE: com.eumji.discovery.ProxyController.java
@@ -51,6 +50,10 @@ public class ProxyController {
     }
 
 
+    @PostMapping("/proxy/map/value")
+    public String setUser(@RequestBody Map<String,String> request){
+        return request.toString();
+    }
 
     /**
      * zuul proxy by serviceId
