@@ -16,12 +16,15 @@
 
 package com.eumji.zuul.conf;
 
-import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
+import com.netflix.zuul.context.RequestContext;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,7 +36,7 @@ import java.io.InputStream;
  * DATE: 2017/5/7
  * TIME: 14:27
  */
-public class MyFallbackProvider implements ZuulFallbackProvider {
+public class MyFallbackProvider implements FallbackProvider {
     @Override
     public String getRoute() {
         return "customers";
@@ -41,38 +44,51 @@ public class MyFallbackProvider implements ZuulFallbackProvider {
 
     @Override
     public ClientHttpResponse fallbackResponse() {
-        return new ClientHttpResponse() {
-            @Override
-            public HttpStatus getStatusCode() throws IOException {
-                return HttpStatus.OK;
-            }
+        return new CustomClientHttpResponse();
+    }
 
-            @Override
-            public int getRawStatusCode() throws IOException {
-                return 200;
-            }
+    @Override
+    public ClientHttpResponse fallbackResponse(Throwable cause) {
+        return null;
+    }
 
-            @Override
-            public String getStatusText() throws IOException {
-                return "zuul custom fallback status text";
-            }
+    private class CustomClientHttpResponse implements ClientHttpResponse {
 
-            @Override
-            public void close() {
+        @Override
+        public HttpStatus getStatusCode () throws IOException {
+            return HttpStatus.METHOD_NOT_ALLOWED;
+        }
 
-            }
+        @Override
+        public int getRawStatusCode () throws IOException {
+            return 200;
+        }
 
-            @Override
-            public InputStream getBody() throws IOException {
-                return  new ByteArrayInputStream(getStatusText().getBytes());
-            }
+        @Override
+        public String getStatusText () throws IOException {
+            return "zuul custom fallback status text";
+        }
 
-            @Override
-            public HttpHeaders getHeaders() {
-                HttpHeaders headers = new HttpHeaders();
-                headers.setContentType(MediaType.APPLICATION_JSON);
-                return headers;
-            }
-        };
+        @Override
+        public void close () {
+
+        }
+
+        @Override
+        public InputStream getBody () throws IOException {
+            return new ByteArrayInputStream(getStatusText().getBytes());
+        }
+
+        @Override
+        public HttpHeaders getHeaders () {
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            return headers;
+        }
+
+        public InputStream setBody(String text) throws IOException {
+            return new ByteArrayInputStream(StringUtils.isEmpty(text) ? getStatusText().getBytes():text.getBytes());
+        }
+
     }
 }
