@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.eumji.cloud</groupId>
-	<artifactId>atlas</artifactId>
+	<artifactId>spring-cloud-netflix-atlas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>atlas</name>
+	<name>spring-cloud-netflix-atlas</name>
 	<description>Demo project for Spring cloud of atlas demo</description>
 
 	<parent>

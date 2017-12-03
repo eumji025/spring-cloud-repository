@@ -47,8 +47,11 @@
         <module>spring-cloud-discovery-eureka-client</module>
         <module>spring-cloud-discovery-eureka-client2</module>
         <module>spring-cloud-discovery-eureka-server</module>
-        <module>spring-cloud-netflix-dashbord</module>
+        <module>spring-cloud-netflix-dashboard</module>
         <module>spring-cloud-netflix-feign-client</module>
+        <module>spring-cloud-netflix-sidecar</module>
+        <module>spring-cloud-netflix-atlas</module>
+        <module>spring-boot-admin-server</module>
     </modules>
 
 
