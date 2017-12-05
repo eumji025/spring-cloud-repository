@@ -4,13 +4,13 @@ spring:
       server:
         git:
           uri: https://github.com/spring-cloud-samples/config-repo
-          repos:
-            simple: https://github.com/simple/config-repo
-            special:
-              pattern: special*/dev*,*special*/dev*
-              uri: https://github.com/special/config-repo
-            local:
-              pattern: local*
-              uri: file:/home/configsvc/config-repo
+#          repos:
+#            simple: https://github.com/simple/config-repo
+#            special:
+#              pattern: special*/dev*,*special*/dev*
+#              uri: https://github.com/special/config-repo
+#            local:
+#              pattern: local*
+#              uri: file:/home/configsvc/config-repo
 server:
   port: 8888

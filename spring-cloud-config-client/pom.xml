@@ -31,7 +31,6 @@
 		<groupId>com.eumji.cloud</groupId>
 		<artifactId>spring-cloud-demo-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-
 	</parent>
 
 
@@ -39,7 +38,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Edgware.BUILD-SNAPSHOT</spring-cloud.version>
 	</properties>
 
 	<dependencies>

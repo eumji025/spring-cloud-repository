@@ -3,10 +3,10 @@ zuul:
   routes:
     users:
       path: /users/**
-      #直接使用url的方式
-      url: http://localhost:8080/proxy/
       #使用eureka的方式
       #serviceId: eureka-client
+      #直接使用url的方式
+      url: http://localhost:8080/proxy/
 
 ribbon:
   eureka:
@@ -17,5 +17,8 @@ server:
 management:
   security:
     enabled: false
+spring:
+  application:
+    name: zuul-proxy
 
 

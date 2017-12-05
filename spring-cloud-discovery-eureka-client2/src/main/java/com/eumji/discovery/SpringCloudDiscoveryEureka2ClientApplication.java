@@ -30,15 +30,15 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 @EnableEurekaClient
 @RestController
-public class SpringCloudDiscoveryEurekaClientApplication {
+public class SpringCloudDiscoveryEureka2ClientApplication {
 
-	private Logger logger = LoggerFactory.getLogger(SpringCloudDiscoveryEurekaClientApplication.class);
+	private Logger logger = LoggerFactory.getLogger(SpringCloudDiscoveryEureka2ClientApplication.class);
 	@RequestMapping("/")
 	public String home() {
 		logger.info("hello world,this is eureka client2");
 		return "hello world,this is eureka client2";
 	}
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(SpringCloudDiscoveryEurekaClientApplication.class).web(true).run(args);
+		new SpringApplicationBuilder(SpringCloudDiscoveryEureka2ClientApplication.class).web(true).run(args);
 	}
 }
