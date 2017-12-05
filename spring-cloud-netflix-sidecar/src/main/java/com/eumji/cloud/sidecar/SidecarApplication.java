@@ -6,9 +6,9 @@ import org.springframework.cloud.netflix.sidecar.EnableSidecar;
 
 @SpringBootApplication
 @EnableSidecar
-public class SidecarApplication {
+public class SpringcloudNetflixSidecarApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SidecarApplication.class, args);
+		SpringApplication.run(SpringcloudNetflixSidecarApplication.class, args);
 	}
 }

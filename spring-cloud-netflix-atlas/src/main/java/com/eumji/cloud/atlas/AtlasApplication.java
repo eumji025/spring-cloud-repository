@@ -19,12 +19,12 @@ import org.springframework.scheduling.annotation.Scheduled;
 @RibbonClient(name = "atlas", configuration = AtlasClientConfiguration.class)
 @EnableAtlas
 @EnableScheduling
-public class AtlasApplication {
+public class SpringcloudNetflixAtlasApplication {
 	@Autowired
 	Registry registry;
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(AtlasApplication.class, args);
+		SpringApplication.run(SpringcloudNetflixAtlasApplication.class, args);
 	}
 
 	@Scheduled(fixedRate = 1000)

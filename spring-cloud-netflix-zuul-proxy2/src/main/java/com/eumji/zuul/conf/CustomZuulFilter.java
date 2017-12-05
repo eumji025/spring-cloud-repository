@@ -16,10 +16,12 @@
 
 package com.eumji.zuul.conf;
 
+import com.google.common.net.MediaType;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,7 +47,7 @@ public class CustomZuulFilter extends ZuulFilter {
      */
     @Override
     public String filterType() {
-        return "pre" ;
+        return FilterConstants.PRE_TYPE;
     }
 
     @Override
@@ -81,7 +83,7 @@ public class CustomZuulFilter extends ZuulFilter {
             logger.error("token验证失败");
             HttpServletResponse response = ctx.getResponse();
             response.setCharacterEncoding("utf-8");  //设置字符集
-            response.setContentType("text/html; charset=utf-8"); //设置相应格式
+            response.setContentType(MediaType.HTML_UTF_8.toString()); //设置相应格式
             response.setStatus(401);
             ctx.setSendZuulResponse(false); //不进行路由
             try {
