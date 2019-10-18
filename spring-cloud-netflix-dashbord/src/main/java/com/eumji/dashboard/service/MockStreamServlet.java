@@ -12,7 +12,7 @@ import java.nio.charset.Charset;
 
 /**
  * FILE: com.eumji.dashboard.service.MockStreamServlet.java
- * MOTTO:  不积跬步无以至千里,不积小流无以至千里
+ *
  * AUTHOR: EumJi
  * DATE: 2017/5/5
  * TIME: 22:08

@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * FILE: com.eumji.dashboard.controller.DashboardController.java
- * MOTTO:  不积跬步无以至千里,不积小流无以至千里
+ *
  * AUTHOR: EumJi
  * DATE: 2017/5/5
  * TIME: 21:51

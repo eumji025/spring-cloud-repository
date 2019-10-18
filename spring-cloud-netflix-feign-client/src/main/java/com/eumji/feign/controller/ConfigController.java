@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * FILE: com.eumji.feign.controller.ConfigController.java
- * MOTTO:  不积跬步无以至千里,不积小流无以至千里
+ *
  * AUTHOR: EumJi
  * DATE: 2017/5/2
  * TIME: 22:55

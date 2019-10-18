@@ -5,8 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * FILE: com.eumji.zuul.controller.ZuulController.java
- * MOTTO:  不积跬步无以至千里,不积小流无以至千里
+ *
  * AUTHOR: EumJi
  * DATE: 2017/5/7
  * TIME: 11:23

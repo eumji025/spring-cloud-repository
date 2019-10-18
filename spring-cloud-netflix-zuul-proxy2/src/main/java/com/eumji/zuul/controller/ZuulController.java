@@ -1,20 +1,17 @@
 package com.eumji.zuul.controller;
 
-import org.springframework.boot.context.embedded.EmbeddedServletContainerInitializedEvent;
-import org.springframework.context.ApplicationListener;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * FILE: com.eumji.zuul.controller.ZuulController.java
- * MOTTO:  不积跬步无以至千里,不积小流无以至千里
+ *
  * AUTHOR: EumJi
  * DATE: 2017/5/7
  * TIME: 11:23
  */
 @RestController
-public class ZuulController implements ApplicationListener<EmbeddedServletContainerInitializedEvent> {
+public class ZuulController {
     private int serverPort;
 
     @RequestMapping("/add")
@@ -53,10 +50,6 @@ public class ZuulController implements ApplicationListener<EmbeddedServletContai
         return "this is the information1 be ignore";
     }
 
-    @Override
-    public void onApplicationEvent(EmbeddedServletContainerInitializedEvent event) {
-        this.serverPort = event.getEmbeddedServletContainer().getPort();
-    }
 
     @RequestMapping("/timeout")
     public String defaultFallBack(){

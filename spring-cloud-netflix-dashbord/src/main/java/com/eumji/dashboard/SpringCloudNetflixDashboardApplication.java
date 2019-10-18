@@ -1,5 +1,6 @@
 package com.eumji.dashboard;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -21,6 +22,6 @@ public class SpringCloudNetflixDashboardApplication {
 		return new RestTemplate();
 	}
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(SpringCloudNetflixDashboardApplication.class).web(true).run(args);
+		SpringApplication.run(SpringCloudNetflixDashboardApplication.class,args);
 	}
 }

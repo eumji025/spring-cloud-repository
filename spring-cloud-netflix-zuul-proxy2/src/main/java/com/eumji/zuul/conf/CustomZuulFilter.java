@@ -11,8 +11,7 @@ import java.io.IOException;
 
 /**
  * 前置过滤器配置
- * FILE: com.eumji.zuul.conf.CustomZuulFilter.java
- * MOTTO:  不积跬步无以至千里,不积小流无以至千里
+ *
  * AUTHOR: EumJi
  * DATE: 2017/5/11
  * TIME: 15:47

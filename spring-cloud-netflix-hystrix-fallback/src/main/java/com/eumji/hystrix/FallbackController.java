@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * FILE: com.eumji.hystrix.FallbackController.java
- * MOTTO:  不积跬步无以至千里,不积小流无以至千里
+ *
  * AUTHOR: EumJi
  * DATE: 2017/5/4
  * TIME: 22:36

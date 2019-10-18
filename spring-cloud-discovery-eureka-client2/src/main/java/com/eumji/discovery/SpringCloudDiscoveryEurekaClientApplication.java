@@ -18,6 +18,7 @@ package com.eumji.discovery;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -39,6 +40,6 @@ public class SpringCloudDiscoveryEurekaClientApplication {
 		return "hello world,this is eureka client2";
 	}
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(SpringCloudDiscoveryEurekaClientApplication.class).web(true).run(args);
+		SpringApplication.run(SpringCloudDiscoveryEurekaClientApplication.class,args);
 	}
 }

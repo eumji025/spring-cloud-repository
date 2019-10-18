@@ -5,8 +5,7 @@ import feign.auth.BasicAuthRequestInterceptor;
 import org.springframework.context.annotation.Bean;
 
 /**
- * FILE: com.eumji.feign.conf.TestConfiguration.java
- * MOTTO:  不积跬步无以至千里,不积小流无以至千里
+ *
  * AUTHOR: EumJi
  * DATE: 2017/5/2
  * TIME: 22:23

@@ -1,6 +1,6 @@
 package com.eumji.zuul.conf;
 
-import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
+import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -14,20 +14,20 @@ import java.io.InputStream;
 
 /**
  * FILE: com.eumji.zuul.conf.MyFallbackProvider.java
- * MOTTO:  不积跬步无以至千里,不积小流无以至千里
+ *
  * AUTHOR: EumJi
  * DATE: 2017/5/7
  * TIME: 14:27
  */
 @Component
-public class MyFallbackProvider implements ZuulFallbackProvider {
-    @Override
+public class MyFallbackProvider implements FallbackProvider {
+
     public String getRoute() {
         return "customers";
     }
 
     @Override
-    public ClientHttpResponse fallbackResponse() {
+    public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
         return new ClientHttpResponse() {
             @Override
             public HttpStatus getStatusCode() throws IOException {
